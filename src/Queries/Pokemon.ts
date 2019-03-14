@@ -11,13 +11,3 @@ export const POKEMON_QUERY = gql`
     }
   }
 `;
-
-export interface PokemonProps {
-  pokemon?: {
-    id: string;
-    number: string;
-    name: string;
-    image: string;
-    types: string[];
-  };
-}

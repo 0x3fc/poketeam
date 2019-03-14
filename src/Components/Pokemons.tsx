@@ -1,9 +1,9 @@
-import React, { SFC, useState } from "react";
+import React, { FC, useState } from "react";
 import { useQuery } from "react-apollo-hooks";
-import { POKEMON_QUERY } from "../Queries/Pokemon";
+import { POKEMON_QUERY } from "../queries/Pokemon";
 import { Pokemon } from "./Pokemon";
 
-export const Pokemons: SFC = () => {
+export const Pokemons: FC = () => {
   const [name, setName] = useState("");
   const { data, loading } = useQuery(POKEMON_QUERY, {
     variables: { name }

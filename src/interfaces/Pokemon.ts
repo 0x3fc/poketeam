@@ -1,0 +1,11 @@
+export interface Pokemon {
+  id: string;
+  number: string;
+  name: string;
+  image: string;
+  types: string[];
+}
+
+export interface PokemonProps {
+  pokemon?: Pokemon;
+}

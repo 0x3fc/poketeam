@@ -1,7 +1,7 @@
-import React, { SFC } from "react";
-import { PokemonProps } from "../Queries/Pokemon";
+import React, { FC } from "react";
+import { PokemonProps } from "../interfaces/Pokemon";
 
-export const Pokemon: SFC<PokemonProps> = props => {
+export const Pokemon: FC<PokemonProps> = props => {
   const { pokemon } = props;
 
   if (!pokemon) {
