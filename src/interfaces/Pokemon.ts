@@ -9,3 +9,7 @@ export interface Pokemon {
 export interface PokemonProps {
   pokemon?: Pokemon;
 }
+
+export interface TeamProps {
+  team: Pokemon[];
+}
