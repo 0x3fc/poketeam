@@ -19,7 +19,7 @@
     "react-apollo": "^2.5.2",
     "react-apollo-hooks": "^0.4.3",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8",
+    "react-scripts": "^2.1.8",
     "typescript": "3.3.3333"
   },
   "eslintConfig": {
