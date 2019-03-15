@@ -8,8 +8,13 @@ export interface Pokemon {
 
 export interface PokemonProps {
   pokemon?: Pokemon;
+  actions?: JSX.Element[];
 }
 
 export interface TeamProps {
   team: Pokemon[];
+}
+
+export interface TypesProps {
+  types: string[];
 }

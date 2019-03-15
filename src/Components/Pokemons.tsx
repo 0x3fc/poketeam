@@ -4,6 +4,7 @@ import { POKEMON_QUERY } from "../queries/Pokemon";
 import { Pokemon } from "./Pokemon";
 import { Pokemon as IPokemon } from "../interfaces/Pokemon";
 import { Team } from "./Team";
+import { Input, Card, Divider, Icon } from "antd";
 
 export const Pokemons: FC = () => {
   const [name, setName] = useState("");
@@ -14,35 +15,35 @@ export const Pokemons: FC = () => {
   });
 
   const searchBar = (
-    <input value={name} onChange={e => setName(e.target.value)} />
+    <Input.Search
+      placeholder="Search a pokemon"
+      value={name}
+      onChange={e => setName(e.target.value)}
+      onSearch={value => setName(value)}
+      suffix={loading && name ? <Icon type="loading" spin /> : <></>}
+      style={{ marginBottom: "10px" }}
+    />
   );
 
-  const pokemon = (
-    <div>
-      <Pokemon pokemon={data.pokemon} />
-      {data.pokemon ? (
-        <button
-          onClick={() => {
-            setTeam([...team, data.pokemon]);
-            setName("");
-          }}
-        >
-          Select
-        </button>
-      ) : (
-        <></>
-      )}
-    </div>
-  );
-
-  const display = (
-    <div>{loading ? <span>Searching...</span> : <div>{pokemon}</div>}</div>
+  const addToTeam = (
+    <>
+      <Icon
+        type="usergroup-add"
+        onClick={() => {
+          setTeam([...team, data.pokemon]);
+          setName("");
+        }}
+      />
+    </>
   );
 
   return (
     <div>
-      {searchBar}
-      {display}
+      <Card>
+        {searchBar}
+        <Pokemon pokemon={data.pokemon} actions={[addToTeam]} />
+      </Card>
+      <Divider>Team</Divider>
       <Team team={team} />
     </div>
   );

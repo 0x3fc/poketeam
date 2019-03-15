@@ -1,21 +1,20 @@
 import React, { FC } from "react";
 import { PokemonProps } from "../interfaces/Pokemon";
+import { Card, Empty } from "antd";
+import { Types } from "./Types";
 
 export const Pokemon: FC<PokemonProps> = props => {
   const { pokemon } = props;
 
   if (!pokemon) {
-    return <div />;
+    return <Empty description="No matching pokemon :(" />;
   }
 
   return (
-    <div>
-      <div>{pokemon.number}</div>
+    <Card cover={<img src={pokemon.image} />} actions={props.actions}>
+      <strong>#{pokemon.number}</strong>
       <h3>{pokemon.name}</h3>
-      <img src={pokemon.image} />
-      {pokemon.types.map(type => (
-        <div key={type}>{type}</div>
-      ))}
-    </div>
+      <Types types={pokemon.types} />
+    </Card>
   );
 };
