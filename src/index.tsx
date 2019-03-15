@@ -15,8 +15,9 @@ const App: FC = () => {
       <ApolloHooksProvider client={client}>
         <Layout
           style={{
-            maxWidth: "500px",
+            maxWidth: "600px",
             margin: "20px auto",
+            padding: "10px",
             backgroundColor: "transparent"
           }}
         >

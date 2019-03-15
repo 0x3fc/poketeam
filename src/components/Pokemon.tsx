@@ -11,7 +11,10 @@ export const Pokemon: FC<PokemonProps> = props => {
   }
 
   return (
-    <Card cover={<img src={pokemon.image} />} actions={props.actions}>
+    <Card
+      cover={<img src={pokemon.image} style={{ padding: "50px" }} />}
+      actions={props.actions}
+    >
       <strong>#{pokemon.number}</strong>
       <h3>{pokemon.name}</h3>
       <Types types={pokemon.types} />
