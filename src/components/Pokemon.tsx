@@ -12,7 +12,17 @@ export const Pokemon: FC<PokemonProps> = props => {
 
   return (
     <Card
-      cover={<img src={pokemon.image} style={{ padding: "50px" }} />}
+      cover={
+        <img
+          src={pokemon.image}
+          style={{
+            padding: "50px",
+            height: 300,
+            width: "auto",
+            margin: "auto"
+          }}
+        />
+      }
       actions={props.actions}
     >
       <strong>#{pokemon.number}</strong>

@@ -5,6 +5,7 @@ import { Pokemon } from "./Pokemon";
 import { Pokemon as IPokemon } from "../interfaces/Pokemon";
 import { Team } from "./Team";
 import { Input, Card, Divider, Icon } from "antd";
+import icon from "./poketeam.png";
 
 export const Pokemons: FC = () => {
   const [name, setName] = useState("");
@@ -39,6 +40,9 @@ export const Pokemons: FC = () => {
 
   return (
     <div>
+      <div style={{ textAlign: "center" }}>
+        <img src={icon} style={{ height: 200, margin: "auto" }} />
+      </div>
       <Card>
         {searchBar}
         <Pokemon pokemon={data.pokemon} actions={[addToTeam]} />

@@ -27,7 +27,9 @@ export const Types: FC<TypesProps> = props => {
   return (
     <div>
       {props.types.map(type => (
-        <Tag color={TYPE_COLOR[type]}>{type}</Tag>
+        <Tag key={type} color={TYPE_COLOR[type]}>
+          {type}
+        </Tag>
       ))}
     </div>
   );
